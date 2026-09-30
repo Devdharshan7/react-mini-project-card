@@ -38,27 +38,27 @@ function BioSection({ fullText }) {
   );
 }
 
-// Main App Component passing skills as props
+// Main App Component with personalized user data
 function App() {
   const initialSkills = [
-    { id: 1, name: "React.js", count: 18 },
-    { id: 2, name: "JavaScript", count: 24 },
-    { id: 3, name: "CSS3 / Glassmorphism", count: 15 }
+    { id: 1, name: "React.js", count: 12 },
+    { id: 2, name: "JavaScript", count: 18 },
+    { id: 3, name: "CSS3 / Responsive Web", count: 10 }
   ];
 
   const fullBio =
-    "Passionate web developer specializing in high-performance React SPAs, modern CSS layouts, and interactive user interface components.";
+    "Frontend developer building modular, high-performance web interfaces and modern interactive React components.";
 
   return (
     <div className="profile-card">
-      {/* Avatar Icon */}
-      <div className="avatar">GK</div>
+      {/* Avatar Initials */}
+      <div className="avatar">DS</div>
 
-      {/* User Information */}
+      {/* Personalized User Info */}
       <div className="user-info">
-        <h1 className="user-name">Ganesh Kumar</h1>
-        <p className="user-title">Frontend Engineer & React Developer</p>
-        <p className="user-location">📍 Chennai, India</p>
+        <h1 className="user-name">DEVDHARSHAN S</h1>
+        <p className="user-title">Frontend & React Developer</p>
+        <p className="user-location">📍 Tamil Nadu, India</p>
       </div>
 
       {/* Expandable Bio */}
@@ -78,7 +78,7 @@ function App() {
         </div>
       </div>
 
-      {/* Footer Action Buttons */}
+      {/* Action Buttons */}
       <div className="action-buttons">
         <button className="btn-connect">Connect With Me</button>
         <button className="btn-share">Share</button>
