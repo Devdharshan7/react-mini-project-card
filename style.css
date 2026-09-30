@@ -1,0 +1,197 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  background-color: #f4f4f5;
+  color: #18181b;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem 1rem;
+}
+
+/* Outer Card Container */
+.profile-card {
+  background: #ffffff;
+  border: 1px solid #e4e4e7;
+  border-radius: 12px;
+  width: 100%;
+  max-width: 420px;
+  padding: 2rem 1.5rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.03);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.25rem;
+}
+
+/* Avatar Badge */
+.avatar {
+  width: 72px;
+  height: 72px;
+  border-radius: 50%;
+  background-color: #18181b;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: #ffffff;
+  letter-spacing: 0.05em;
+}
+
+/* User Info Header */
+.user-info {
+  text-align: center;
+}
+
+.user-name {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #09090b;
+  margin-bottom: 0.25rem;
+}
+
+.user-title {
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: #3f3f46;
+  margin-bottom: 0.35rem;
+}
+
+.user-location {
+  font-size: 0.8rem;
+  color: #71717a;
+}
+
+/* Collapsible Bio Box */
+.bio-box {
+  width: 100%;
+  background-color: #fafafa;
+  border: 1px solid #e4e4e7;
+  border-radius: 8px;
+  padding: 1rem;
+  font-size: 0.875rem;
+  color: #3f3f46;
+  line-height: 1.5;
+}
+
+.bio-toggle-btn {
+  background: none;
+  border: none;
+  color: #18181b;
+  font-size: 0.8rem;
+  font-weight: 600;
+  cursor: pointer;
+  margin-top: 0.5rem;
+  display: inline-block;
+  padding: 0;
+  text-decoration: underline;
+}
+
+/* Skills Section */
+.skills-section {
+  width: 100%;
+}
+
+.section-label {
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: #71717a;
+  letter-spacing: 0.05em;
+  margin-bottom: 0.75rem;
+  display: block;
+  text-transform: uppercase;
+}
+
+.skills-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+
+.skill-item {
+  background-color: #ffffff;
+  border: 1px solid #e4e4e7;
+  border-radius: 8px;
+  padding: 0.6rem 0.85rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.skill-name {
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: #18181b;
+}
+
+/* Endorse Button / Counter */
+.endorse-btn {
+  background-color: #f4f4f5;
+  border: 1px solid #d4d4d8;
+  color: #18181b;
+  padding: 0.3rem 0.75rem;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+  transition: all 0.2s ease;
+}
+
+.endorse-btn:hover {
+  background-color: #18181b;
+  color: #ffffff;
+  border-color: #18181b;
+}
+
+/* Action Buttons */
+.action-buttons {
+  display: flex;
+  gap: 0.75rem;
+  width: 100%;
+  margin-top: 0.5rem;
+}
+
+.btn-connect {
+  flex: 2;
+  background-color: #18181b;
+  color: #ffffff;
+  border: none;
+  border-radius: 8px;
+  padding: 0.75rem;
+  font-size: 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.btn-connect:hover {
+  background-color: #27272a;
+}
+
+.btn-share {
+  flex: 1;
+  background-color: #ffffff;
+  border: 1px solid #d4d4d8;
+  color: #18181b;
+  border-radius: 8px;
+  padding: 0.75rem;
+  font-size: 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.btn-share:hover {
+  background-color: #f4f4f5;
+  border-color: #18181b;
+}
