@@ -40,10 +40,11 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 1.5rem;
+  font-size: 1.4rem;
   font-weight: 700;
   color: #ffffff;
   box-shadow: 0 0 20px rgba(192, 132, 252, 0.3);
+  letter-spacing: 0.05em;
 }
 
 /* User Info Header */
@@ -56,6 +57,7 @@ body {
   font-weight: 700;
   color: #ffffff;
   margin-bottom: 0.25rem;
+  letter-spacing: 0.02em;
 }
 
 .user-title {
