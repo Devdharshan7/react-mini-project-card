@@ -1,57 +1,91 @@
 const { useState } = React;
 
-// Card component receiving prop 'title' and using useState for like/unlike state
-function Card({ title }) {
-  const [liked, setLiked] = useState(false);
+// Skill Item Component using useState Hook to manage endorsement counters
+function SkillItem({ name, initialEndorsements }) {
+  const [endorsements, setEndorsements] = useState(initialEndorsements);
 
-  const toggleLike = () => {
-    setLiked((prev) => !prev);
+  const handleEndorse = () => {
+    setEndorsements((prev) => prev + 1);
   };
 
   return (
-    <div className={`card ${liked ? 'is-liked' : ''}`}>
-      <h3 className="card-title">{title}</h3>
-
-      {/* Dynamic Liked / Not liked label */}
-      <span className={`status-badge ${liked ? 'liked' : 'unliked'}`}>
-        {liked ? 'Liked' : 'Not liked'}
-      </span>
-
-      {/* Button handling state toggle */}
-      <button 
-        className={`btn-like ${liked ? 'liked' : ''}`} 
-        onClick={toggleLike}
-      >
-        {liked ? 'Unlike' : 'Like'}
+    <div className="skill-item">
+      <span className="skill-name">{name}</span>
+      <button className="endorse-btn" onClick={handleEndorse}>
+        🔥 {endorsements}
       </button>
     </div>
   );
 }
 
-// Parent App component passing different titles via props
-function App() {
-  const cardTitles = [
-    'Component Architecture',
-    'React Hooks & State',
-    'Passing Props in React',
-    'Single Page Applications'
-  ];
+// Collapsible Bio Component using useState Hook
+function BioSection({ fullText }) {
+  const [isExpanded, setIsExpanded] = useState(false);
+
+  const toggleBio = () => {
+    setIsExpanded((prev) => !prev);
+  };
+
+  const truncatedText = fullText.slice(0, 62) + "...";
 
   return (
-    <div className="container">
-      <header className="header">
-        <h1>React Mini Project</h1>
-        <p>Card Component with Props and useState Hook</p>
-      </header>
+    <div className="bio-box">
+      <p>{isExpanded ? fullText : truncatedText}</p>
+      <button className="bio-toggle-btn" onClick={toggleBio}>
+        {isExpanded ? "Show Less ▲" : "Read Full Bio ▼"}
+      </button>
+    </div>
+  );
+}
 
-      <div className="card-grid">
-        {cardTitles.map((title, index) => (
-          <Card key={index} title={title} />
-        ))}
+// Main App Component passing skills as props
+function App() {
+  const initialSkills = [
+    { id: 1, name: "React.js", count: 18 },
+    { id: 2, name: "JavaScript", count: 24 },
+    { id: 3, name: "CSS3 / Glassmorphism", count: 15 }
+  ];
+
+  const fullBio =
+    "Passionate web developer specializing in high-performance React SPAs, modern CSS layouts, and interactive user interface components.";
+
+  return (
+    <div className="profile-card">
+      {/* Avatar Icon */}
+      <div className="avatar">GK</div>
+
+      {/* User Information */}
+      <div className="user-info">
+        <h1 className="user-name">Ganesh Kumar</h1>
+        <p className="user-title">Frontend Engineer & React Developer</p>
+        <p className="user-location">📍 Chennai, India</p>
+      </div>
+
+      {/* Expandable Bio */}
+      <BioSection fullText={fullBio} />
+
+      {/* Skill Endorsements */}
+      <div className="skills-section">
+        <span className="section-label">Endorse Skills (useState)</span>
+        <div className="skills-list">
+          {initialSkills.map((skill) => (
+            <SkillItem
+              key={skill.id}
+              name={skill.name}
+              initialEndorsements={skill.count}
+            />
+          ))}
+        </div>
+      </div>
+
+      {/* Footer Action Buttons */}
+      <div className="action-buttons">
+        <button className="btn-connect">Connect With Me</button>
+        <button className="btn-share">Share</button>
       </div>
     </div>
   );
 }
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
+const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(<App />);
